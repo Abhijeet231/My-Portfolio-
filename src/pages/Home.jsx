@@ -8,10 +8,19 @@ import Contact from './Contact.jsx'
 const Home = () => {
   return (
     <div>
-      <Hero />
-      <About />
-      <Work />
-      <Contact />
+      <section id='hero'>
+        <Hero />
+      </section>
+
+      <section id='about'>
+        <About />
+      </section>
+      <section id='work'>
+        <Work />
+      </section>
+      <section id='contact'>  
+        <Contact />
+      </section>
     </div>
   )
 }

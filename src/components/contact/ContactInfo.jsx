@@ -23,14 +23,14 @@ const contactDetails = [
   {
     icon: Mail,
     label: "Email",
-    value: "abhijeetghosh@example.com", // replace with your real email
-    href: "mailto:abhijeetghosh@example.com",
+    value: "ghoshabhijeet778@gmail.com", // replace with your real email
+    href: "mailto:ghoshabhijeet778@gmail.com",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+91 00000 00000", // replace with your real number
-    href: "tel:+910000000000",
+    value: "+91 95566*****", // replace with your real number
+    href: "tel:+91*********",
   },
   {
     icon: MapPin,

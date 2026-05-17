@@ -13,6 +13,11 @@ export default function Navbar() {
 
   const navLinks = ["About", "Work", "Contact"];
 
+  const scrollTo = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false);
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -22,36 +27,36 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-10 flex items-center justify-between h-16">
-        {/* Logo */}
-        <Link
-          to="/"
+        {/* Logo — scrolls to top */}
+        <button
+          onClick={() => scrollTo("hero")}
           className="text-orange-700 font-bold text-xl tracking-tight select-none"
           style={{ fontFamily: "'DM Sans', sans-serif" }}
         >
           AG
-        </Link>
+        </button>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link
+            <button
               key={link}
-              to={`/${link.toLowerCase()}`}
+              onClick={() => scrollTo(link.toLowerCase())}
               className="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-200 tracking-wide"
             >
               {link}
-            </Link>
+            </button>
           ))}
         </div>
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <Link
-            to="/contact"
+          <button
+            onClick={() => scrollTo("contact")}
             className="bg-orange-700 hover:bg-orange-600 text-white text-sm font-semibold px-5 py-2 rounded-full transition-all duration-200 shadow-md hover:shadow-orange-700/30"
           >
             Let's Talk
-          </Link>
+          </button>
         </div>
 
         {/* Mobile Hamburger */}
@@ -60,21 +65,9 @@ export default function Navbar() {
           className="md:hidden flex flex-col gap-1.5 p-2 group"
           aria-label="Toggle menu"
         >
-          <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-              menuOpen ? "rotate-45 translate-y-2" : ""
-            }`}
-          />
-          <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-              menuOpen ? "opacity-0 scale-x-0" : ""
-            }`}
-          />
-          <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-              menuOpen ? "-rotate-45 -translate-y-2" : ""
-            }`}
-          />
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : ""}`} />
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
         </button>
       </div>
 
@@ -86,22 +79,20 @@ export default function Navbar() {
       >
         <div className="flex flex-col px-6 py-5 gap-5">
           {navLinks.map((link) => (
-            <Link
+            <button
               key={link}
-              to={`/${link.toLowerCase()}`}
-              onClick={() => setMenuOpen(false)}
-              className="text-gray-300 hover:text-white text-base font-medium transition-colors duration-200"
+              onClick={() => scrollTo(link.toLowerCase())}
+              className="text-gray-300 hover:text-white text-base font-medium transition-colors duration-200 text-left"
             >
               {link}
-            </Link>
+            </button>
           ))}
-          <Link
-            to="/contact"
-            onClick={() => setMenuOpen(false)}
+          <button
+            onClick={() => scrollTo("contact")}
             className="bg-orange-700 hover:bg-orange-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full text-center transition-all duration-200 mt-1"
           >
             Let's Talk
-          </Link>
+          </button>
         </div>
       </div>
     </nav>
