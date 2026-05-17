@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App.jsx";
 
 // pages
-import About from "../pages/About.jsx";
+import About from "../pages/About.jsx"
 import Blogs from "../pages/Blogs.jsx";
 import Contact from "../pages/Contact.jsx";
 import Home from "../pages/Home.jsx";
@@ -38,3 +38,6 @@ const router = createBrowserRouter([
         ]
     }
 ])
+
+
+export default router;

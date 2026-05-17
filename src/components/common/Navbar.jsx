@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -22,35 +23,35 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-10 flex items-center justify-between h-16">
         {/* Logo */}
-        <a
-          href="/"
+        <Link
+          to="/"
           className="text-orange-700 font-bold text-xl tracking-tight select-none"
           style={{ fontFamily: "'DM Sans', sans-serif" }}
         >
           AG
-        </a>
+        </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link}
-              href={`#${link.toLowerCase()}`}
+              to={`/${link.toLowerCase()}`}
               className="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-200 tracking-wide"
             >
               {link}
-            </a>
+            </Link>
           ))}
         </div>
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="bg-orange-700 hover:bg-orange-600 text-white text-sm font-semibold px-5 py-2 rounded-full transition-all duration-200 shadow-md hover:shadow-orange-700/30"
           >
             Let's Talk
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Hamburger */}
@@ -85,22 +86,22 @@ export default function Navbar() {
       >
         <div className="flex flex-col px-6 py-5 gap-5">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link}
-              href={`#${link.toLowerCase()}`}
+              to={`/${link.toLowerCase()}`}
               onClick={() => setMenuOpen(false)}
               className="text-gray-300 hover:text-white text-base font-medium transition-colors duration-200"
             >
               {link}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             onClick={() => setMenuOpen(false)}
             className="bg-orange-700 hover:bg-orange-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full text-center transition-all duration-200 mt-1"
           >
             Let's Talk
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
