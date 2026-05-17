@@ -1,25 +1,40 @@
-
 // ─── Skills data ─────────────────────────────────────────────────────────────
 const skills = [
   {
     category: "Frontend",
     accent: "#c2410c",
-    items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML/CSS", "Zustand", "React Query"],
+    items: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "HTML/CSS",
+      "Zustand",
+      "Redux Toolkit",
+    ],
   },
   {
     category: "Backend",
     accent: "#9a3412",
-    items: ["Node.js", "Express.js", "REST APIs", "GraphQL", "JWT / OAuth", "Python", "OpenAI"],
+    items: ["Node.js", "Express.js", "REST APIs", "JWT / OAuth", "Socket.io"],
   },
   {
     category: "Databases",
     accent: "#7c2d12",
-    items: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Supabase", "Firebase", "Mongoose"],
+    items: ["PostgreSQL", "MongoDB", "MySQL", "Mongoose"],
   },
   {
     category: "DevOps & Tools",
     accent: "#c2410c",
-    items: ["Git", "CI/CD", "Vercel", "Docker", "AWS", "Linux", "Figma"],
+    items: [
+      "Git",
+      "GitHub",
+      "Vercel",
+      "Docker",
+      "Render",
+      "Railway",
+      "Cloudflare",
+    ],
   },
 ];
 
@@ -41,7 +56,10 @@ export function SkillsSection() {
           >
             Technologies I work with
           </h2>
-          <p className="mt-2 text-sm" style={{ color: "rgba(255,255,255,0.3)" }}>
+          <p
+            className="mt-2 text-sm"
+            style={{ color: "rgba(255,255,255,0.3)" }}
+          >
             Tools and languages I reach for to get things built.
           </p>
         </div>
@@ -56,19 +74,23 @@ export function SkillsSection() {
                 background: "rgba(255,255,255,0.025)",
                 border: "1px solid rgba(255,255,255,0.07)",
               }}
-              onMouseEnter={e => {
+              onMouseEnter={(e) => {
                 e.currentTarget.style.border = "1px solid rgba(194,65,12,0.25)";
                 e.currentTarget.style.background = "rgba(194,65,12,0.04)";
               }}
-              onMouseLeave={e => {
-                e.currentTarget.style.border = "1px solid rgba(255,255,255,0.07)";
+              onMouseLeave={(e) => {
+                e.currentTarget.style.border =
+                  "1px solid rgba(255,255,255,0.07)";
                 e.currentTarget.style.background = "rgba(255,255,255,0.025)";
               }}
             >
               {/* Subtle top accent line */}
               <div
                 className="absolute top-0 left-6 right-6 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                style={{ background: "linear-gradient(to right, transparent, rgba(194,65,12,0.7), transparent)" }}
+                style={{
+                  background:
+                    "linear-gradient(to right, transparent, rgba(194,65,12,0.7), transparent)",
+                }}
               />
 
               {/* Corner number */}
@@ -93,7 +115,7 @@ export function SkillsSection() {
 
               {/* Tags */}
               <div className="flex flex-wrap gap-2">
-                {items.map(skill => (
+                {items.map((skill) => (
                   <span
                     key={skill}
                     className="text-xs font-medium px-3 py-1.5 rounded-full transition-all duration-200"

@@ -1,132 +1,127 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import {  BookOpen, X } from "lucide-react";// ─── Social links ───────────────────────────────────────────────────────────
-import profilePic from "../../assets/profilePic.jpg"
+import { BookOpen, X } from "lucide-react";
+import { Link } from "react-router-dom";
+import profilePic from "../../assets/profilePic.jpg";
 
+// ─── Social links ─────────────────────────────────────────────────────────────
 const socials = [
-  { icon: FaGithub,    label: "GitHub",    href: "https://github.com/Abhijeet231" },
-  { icon: FaLinkedin,  label: "LinkedIn",  href: "https://www.linkedin.com/in/abhijit-ghosh-63b624235/" },
-  { icon: X,   label: "Twitter",   href: "https://x.com/Abhijit_091" },
-  { icon: BookOpen,  label: "Medium",    href: "https://medium.com/@Abhi_23" },
-  // Peerlist — custom SVG since lucide doesn't have it
-  { icon: null,      label: "Peerlist",  href: "https://peerlist.io/abhijeet_23/resume" },
+  { icon: FaGithub,   label: "GitHub",   href: "https://github.com/Abhijeet231" },
+  { icon: FaLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/abhijit-ghosh-63b624235/" },
+  { icon: X,          label: "Twitter",  href: "https://x.com/Abhijit_091" },
+  { icon: BookOpen,   label: "Medium",   href: "https://medium.com/@Abhi_23" },
+  { icon: null,       label: "Peerlist", href: "https://peerlist.io/abhijeet_23/resume" },
 ];
 
-
-
-// ─── Peerlist icon SVG ────────────────────────────────────────────────────────
+// ─── Peerlist icon ────────────────────────────────────────────────────────────
 function PeerlistIcon({ size = 18 }) {
-  return ( 
+  return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
       <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 1.5a8.5 8.5 0 1 1 0 17 8.5 8.5 0 0 1 0-17zm-1.25 4v9h1.5v-3.25H13a3.375 3.375 0 0 0 0-6.75h-2.25zm1.5 1.5H13a1.875 1.875 0 0 1 0 3.75h-.75V9z"/>
     </svg>
   );
 }
 
+// ─── Profile Card ─────────────────────────────────────────────────────────────
 export const ProfileCard = () => {
   return (
-    
-        
     <div className="relative shrink-0 w-full max-w-75 mx-auto lg:mx-0">
-      {/* Decorative corner accents */}
-      <div className="absolute -top-3 -left-3 w-10 h-10 border-t-2 border-l-2 border-orange-700 rounded-tl-xl opacity-70" />
-      <div className="absolute -bottom-3 -right-3 w-10 h-10 border-b-2 border-r-2 border-orange-700 rounded-br-xl opacity-70" />
 
-      {/* Outer glow ring */}
+      {/* Outer ambient glow */}
       <div
-        className="absolute inset-0 rounded-2xl opacity-30 blur-xl"
-        style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(194,65,12,0.6) 0%, transparent 70%)" }}
+        className="absolute -inset-4 rounded-3xl opacity-20 blur-2xl pointer-events-none"
+        style={{ background: "radial-gradient(ellipse at 50% 30%, rgba(194,65,12,0.9) 0%, transparent 70%)" }}
       />
 
-      {/* Card body */}
+      {/* Card */}
       <div
-        className="relative rounded-2xl overflow-hidden"
+        className="relative rounded-3xl overflow-hidden"
         style={{
-          background: "linear-gradient(145deg, #1a1a1a 0%, #111 60%, #0f0f0f 100%)",
-          border: "1px solid rgba(255,255,255,0.08)",
-          boxShadow: "0 0 0 1px rgba(194,65,12,0.15), 0 24px 48px rgba(0,0,0,0.5)",
+          background: "#141414",
+          border: "1px solid rgba(255,255,255,0.07)",
+          boxShadow: "0 32px 64px rgba(0,0,0,0.6), 0 0 0 1px rgba(194,65,12,0.1)",
         }}
       >
-        {/* Image area */}
-        <div className="relative w-full aspect-4/5 bg-[#1c1c1c] overflow-hidden">
-          {/* Orange gradient bg behind placeholder */}
+
+        {/* ── Photo area ── */}
+        <div className="relative w-full" style={{ height: "320px" }}>
+          {/* Fallback gradient bg */}
           <div
             className="absolute inset-0"
+            style={{ background: "linear-gradient(160deg, #3d1a05 0%, #1a0a02 100%)" }}
+          />
+
+          {/* Profile photo */}
+          <img
+            src={profilePic}
+            alt="Abhijeet Ghosh"
+            className="absolute inset-0 w-full h-full object-cover object-top"
+            style={{ display: "block" }}
+            onError={e => { e.currentTarget.style.display = "none"; }}
+          />
+
+          {/* Bottom fade — blends photo into card body */}
+          <div
+            className="absolute bottom-0 left-0 right-0 h-28 pointer-events-none"
             style={{
-              background: "linear-gradient(160deg, #c2410c 0%, #7c2d12 50%, #1a0a05 100%)",
+              background: "linear-gradient(to bottom, transparent 0%, #141414 100%)",
             }}
           />
 
-          {/* Placeholder silhouette */}
-          <div className="absolute inset-0 flex items-end justify-center">
+          {/* Availability badge — floats on photo */}
+          <div className="absolute top-4 right-4">
             <div
-              className="w-44 h-52 rounded-t-full opacity-20"
-              style={{ background: "rgba(0,0,0,0.7)" }}
-            />
-          </div>
-
-          {/* Initials overlay */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span
-              className="text-7xl font-black text-white/10 select-none"
-              style={{ fontFamily: "'DM Sans', sans-serif", letterSpacing: "-4px" }}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold"
+              style={{
+                background: "rgba(0,0,0,0.55)",
+                border: "1px solid rgba(74,222,128,0.3)",
+                color: "#4ade80",
+                backdropFilter: "blur(8px)",
+              }}
             >
-              AG
-            </span>
-          </div>
-
-          {/* "Replace with photo" hint */}
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center">
-            <span className="text-[11px] text-white/30 tracking-widest uppercase">
-              <img src= {profilePic} alt="Profile image"/>
-            </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+              Available
+            </div>
           </div>
         </div>
 
-        {/* Card info */}
-        <div className="px-5 pt-5 pb-6">
-          {/* Name */}
+        {/* ── Card body ── */}
+        <div className="px-6 pb-6 -mt-2">
+
+          {/* Name + role */}
           <h3
-            className="text-white font-black text-xl leading-tight"
+            className="text-white text-2xl leading-tight font-semibold mt-4"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
             Abhijeet Ghosh
           </h3>
 
-          {/* Role badge */}
-          <div className="mt-2 inline-flex items-center gap-1.5">
-            <span
-              className="w-1.5 h-1.5 rounded-full"
-              style={{ background: "#c2410c" }}
-            />
-            <span
-              className="text-xs font-semibold tracking-widest uppercase"
-              style={{ color: "#c2410c" }}
-            >
-              Full-Stack Developer
-            </span>
-          </div>
-
-          {/* Availability pill */}
-          <div
-            className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium"
-            style={{
-              background: "rgba(194,65,12,0.12)",
-              border: "1px solid rgba(194,65,12,0.25)",
-              color: "#fb923c",
-            }}
+          <p
+            className="mt-1 text-sm font-medium"
+            style={{ color: "rgba(255,255,255,0.4)" }}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-            Available for projects
+            Full-Stack Developer
+          </p>
+
+          {/* Location pill */}
+          <div
+            className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-medium"
+            style={{ color: "rgba(255,255,255,0.3)" }}
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+            India · Remote
           </div>
 
           {/* Divider */}
           <div
-            className="mt-4 mb-4 h-px"
-            style={{ background: "linear-gradient(to right, rgba(194,65,12,0.4), transparent)" }}
+            className="mt-5 mb-5 h-px"
+            style={{ background: "rgba(255,255,255,0.06)" }}
           />
 
-          {/* Social links */}
-          <div className="flex items-center gap-3">
+          {/* Social icons */}
+          <div className="flex items-center gap-2.5 mb-6">
             {socials.map(({ icon: Icon, label, href }) => (
               <a
                 key={label}
@@ -134,37 +129,63 @@ export const ProfileCard = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="group relative flex items-center justify-center w-8 h-8 rounded-lg transition-all duration-200"
+                className="group relative flex items-center justify-center w-9 h-9 rounded-xl transition-all duration-200"
                 style={{
-                  background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(255,255,255,0.08)",
+                  background: "rgba(255,255,255,0.05)",
+                  border: "1px solid rgba(255,255,255,0.07)",
+                  color: "rgba(255,255,255,0.4)",
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.background = "rgba(194,65,12,0.18)";
-                  e.currentTarget.style.borderColor = "rgba(194,65,12,0.4)";
+                  e.currentTarget.style.background = "rgba(194,65,12,0.2)";
+                  e.currentTarget.style.borderColor = "rgba(194,65,12,0.5)";
                   e.currentTarget.style.color = "#fb923c";
+                  e.currentTarget.style.transform = "translateY(-2px)";
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.background = "rgba(255,255,255,0.04)";
-                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
-                  e.currentTarget.style.color = "";
+                  e.currentTarget.style.background = "rgba(255,255,255,0.05)";
+                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.07)";
+                  e.currentTarget.style.color = "rgba(255,255,255,0.4)";
+                  e.currentTarget.style.transform = "translateY(0)";
                 }}
               >
-                <span className="text-gray-500 group-hover:text-orange-400 transition-colors">
-                  {Icon ? <Icon size={15} /> : <PeerlistIcon size={15} />}
-                </span>
+                {Icon ? <Icon size={15} /> : <PeerlistIcon size={15} />}
+
                 {/* Tooltip */}
                 <span
-                  className="absolute -top-7 left-1/2 -translate-x-1/2 text-[10px] font-medium px-1.5 py-0.5 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
-                  style={{ background: "#1a1a1a", border: "1px solid rgba(255,255,255,0.1)", color: "#ccc" }}
+                  className="absolute -top-8 left-1/2 -translate-x-1/2 text-[10px] font-medium px-2 py-0.5 rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                  style={{ background: "#222", border: "1px solid rgba(255,255,255,0.08)", color: "#ccc" }}
                 >
                   {label}
                 </span>
               </a>
             ))}
           </div>
+
+          {/* CTA button */}
+          <Link
+            to="/contact"
+            className="block w-full text-center text-sm font-bold py-3.5 rounded-2xl transition-all duration-200"
+            style={{
+              background: "linear-gradient(135deg, #c2410c 0%, #9a3412 100%)",
+              color: "#fff",
+              boxShadow: "0 8px 24px rgba(194,65,12,0.35)",
+              letterSpacing: "0.02em",
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.background = "linear-gradient(135deg, #b53d0c 0%, #8a2e10 100%)";
+              e.currentTarget.style.boxShadow = "0 12px 32px rgba(194,65,12,0.5)";
+              e.currentTarget.style.transform = "translateY(-1px)";
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.background = "linear-gradient(135deg, #c2410c 0%, #9a3412 100%)";
+              e.currentTarget.style.boxShadow = "0 8px 24px rgba(194,65,12,0.35)";
+              e.currentTarget.style.transform = "translateY(0)";
+            }}
+          >
+            Let's Talk →
+          </Link>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

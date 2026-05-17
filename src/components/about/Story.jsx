@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
 
@@ -50,9 +51,9 @@ export const Story = () => {
       {/* Stats row */}
       <div className="mt-8 grid grid-cols-3 gap-4">
         {[
-          { num: "3+", label: "Years building" },
-          { num: "20+", label: "Projects shipped" },
-          { num: "10+", label: "Happy clients" },
+          { num: "1+", label: "Years building" },
+          { num: "10+", label: "Projects shipped" },
+          { num: "4+", label: "Happy clients" },
         ].map(({ num, label }) => (
           <div
             key={label}
@@ -76,7 +77,7 @@ export const Story = () => {
       {/* CTA */}
       <div className="mt-8 flex items-center gap-4 flex-wrap">
         <a
-          href="/resume.pdf"
+          href="https://drive.google.com/file/d/1E83v2s3RzFkOa_JbCHwPq47tuaD1VwNC/view?usp=sharing"
           download
           className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-200"
           style={{
@@ -90,15 +91,15 @@ export const Story = () => {
           <ExternalLink size={14} />
           Download Resume
         </a>
-        <a
-          href="#contact"
+        <Link
+          to="/contact"
           className="text-sm font-semibold transition-colors"
           style={{ color: "rgba(255,255,255,0.4)" }}
           onMouseEnter={e => e.currentTarget.style.color = "#fff"}
           onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.4)"}
         >
           Get in touch →
-        </a>
+        </Link>
       </div>
     </div>
   );
