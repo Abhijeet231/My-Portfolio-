@@ -78,7 +78,8 @@ export const Story = () => {
       <div className="mt-8 flex items-center gap-4 flex-wrap">
         <a
           href="https://drive.google.com/file/d/1E83v2s3RzFkOa_JbCHwPq47tuaD1VwNC/view?usp=sharing"
-          download
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-200"
           style={{
             background: "#c2410c",
@@ -91,15 +92,15 @@ export const Story = () => {
           <ExternalLink size={14} />
           Download Resume
         </a>
-        <Link
-          to="/contact"
+        <a
+          href="#contact"
           className="text-sm font-semibold transition-colors"
           style={{ color: "rgba(255,255,255,0.4)" }}
           onMouseEnter={e => e.currentTarget.style.color = "#fff"}
           onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.4)"}
         >
           Get in touch →
-        </Link>
+        </a>
       </div>
     </div>
   );

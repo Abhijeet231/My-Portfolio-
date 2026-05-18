@@ -100,8 +100,9 @@ function Hero() {
               View My Work
             </a>
             <a
-              href="/resume.pdf"
-              download
+              href="https://drive.google.com/file/d/1E83v2s3RzFkOa_JbCHwPq47tuaD1VwNC/view"
+              target="_blank"
+              rel="noopener noreferrer"
               className="border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 active:scale-95 text-white font-bold text-sm px-7 py-3.5 rounded-full transition-all duration-200 w-full sm:w-auto text-center"
             >
               Download Resume

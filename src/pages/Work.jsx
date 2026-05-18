@@ -1,4 +1,4 @@
-import ProjectCard from "../components/work/ProjectCard.jsx";
+import ProjectCard from "../components/work/projectCard.jsx";
 
 // ─── Projects data ────────────────────────────────────────────────────────────
 // Order: Professional (NDA) first to show credibility, then polished personal projects
