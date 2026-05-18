@@ -52,7 +52,7 @@ function Hero() {
           }}
         >
           {/* Name */}
-          <h1 className="text-5xl sm:text-7xl md:text-8xl font-black text-white leading-tight tracking-tight mb-5">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-semibold text-white leading-tight tracking-tight mb-5">
             Abhijeet Ghosh
           </h1>
 
@@ -66,13 +66,13 @@ function Hero() {
               className="text-lg sm:text-xl text-gray-400 font-medium tracking-wide mb-1"
               style={{ fontFamily: "'DM Sans', sans-serif" }}
             >
-              Freelance Software Developer
+              Full-Stack Software Developer
             </p>
             <p
               className="text-base sm:text-lg font-semibold"
               style={{ color: "#c2410c", fontFamily: "'DM Sans', sans-serif" }}
             >
-              Open for freelance work
+            Open to impactful work
             </p>
           </div>
 
@@ -83,8 +83,7 @@ function Hero() {
             }`}
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
-            Helping startups turn ideas into MVPs - from zero to launch. Let's
-            build something you're proud of.
+           Passionate about building products that solve real problems
           </p>
 
           {/* Buttons */}

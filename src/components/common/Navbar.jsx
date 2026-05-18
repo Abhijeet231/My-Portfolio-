@@ -28,13 +28,13 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-10 flex items-center justify-between h-16">
         {/* Logo — scrolls to top */}
-        <button
-          onClick={() => scrollTo("hero")}
-          className="text-orange-700 font-bold text-xl tracking-tight select-none"
+        <Link
+          to="/"
+          className="text-orange-700 font-bold text-xl tracking-tight select-none cursor-pointer"
           style={{ fontFamily: "'DM Sans', sans-serif" }}
         >
           AG
-        </button>
+        </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">

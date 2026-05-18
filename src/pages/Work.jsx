@@ -1,51 +1,7 @@
 import ProjectCard from "../components/work/projectCard.jsx";
 
-// ─── Projects data ────────────────────────────────────────────────────────────
-// Order: Professional (NDA) first to show credibility, then polished personal projects
-const projects = [
-  {
-    title: "RoboGPT",
-    subtitle: "@ Orangewood Labs",
-    description:
-      "AI-powered robot programming interface built at Orangewood Labs. Enables engineers to control and program robotic arms using natural language — eliminating low-level code for non-expert users.",
-    image: null, // replace with screenshot path e.g. "/projects/robogpt.png"
-    gradient: "linear-gradient(135deg, #0a0a1a 0%, #1a1a3d 40%, #0d0d1a 100%)",
-    tech: ["React", "Python", "OpenAI", "WebSockets", "FastAPI", "ROS"],
-    github: null,
-    live: null,
-    type: "professional",
-    status: "nda",
-    featured: true,
-  },
-  {
-    title: "Housieco",
-    subtitle: "Client project",
-    description:
-      "Full-stack real estate platform for property booking and listing. Features advanced search filters, agent dashboards, and a smooth booking flow — built end-to-end for a client.",
-    image: null, // replace with "/projects/housieco.png"
-    gradient: "linear-gradient(135deg, #071a0f 0%, #0f3320 40%, #071a0f 100%)",
-    tech: ["Next.js", "Node.js", "PostgreSQL", "Tailwind CSS", "Stripe", "Cloudinary"],
-    github: null,
-    live: null,
-    type: "freelance",
-    status: "live",
-    featured: true,
-  },
-  {
-    title: "SneakersHub",
-    subtitle: "Personal project",
-    description:
-      "E-commerce platform for sneakers with a seamless shopping experience — secure payment processing, dynamic cart management, real-time inventory, and a clean product discovery UI.",
-    image: null, // replace with "/projects/sneakershub.png"
-    gradient: "linear-gradient(135deg, #1a0a00 0%, #3d1a00 40%, #1a0800 100%)",
-    tech: ["React", "Express.js", "MongoDB", "Tailwind CSS", "Stripe", "JWT"],
-    github: "https://github.com/Abhijeet231/sneakershub", // replace with real URL
-    live: "https://sneakershub.vercel.app", // replace with real URL
-    type: "personal",
-    status: "live",
-    featured: false,
-  },
-];
+import { projects } from "../data/projects.js";
+
 
 // ─── Work Page ────────────────────────────────────────────────────────────────
 export default function Work() {
@@ -73,8 +29,8 @@ export default function Work() {
             className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.05] tracking-tight mb-6"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
-            Things I've
-            <br />
+            <span>Things I've </span>
+            
             <span style={{ color: "#c2410c" }}>built.</span>
           </h1>
 
@@ -82,7 +38,7 @@ export default function Work() {
             className="text-[15px] leading-relaxed max-w-xl"
             style={{ color: "rgba(255,255,255,0.38)" }}
           >
-            A selection of projects — professional work, client builds, and personal
+            A selection of projects - professional work, client builds, and personal
             experiments. Each one shipped with care.
           </p>
 

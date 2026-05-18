@@ -1,9 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
-
-
-
 export const Story = () => {
   return (
     <div className="flex-1 flex flex-col justify-center">
@@ -15,7 +12,10 @@ export const Story = () => {
         >
           About Me
         </span>
-        <div className="h-px flex-1 max-w-15" style={{ background: "rgba(194,65,12,0.4)" }} />
+        <div
+          className="h-px flex-1 max-w-15"
+          style={{ background: "rgba(194,65,12,0.4)" }}
+        />
       </div>
 
       {/* Headline */}
@@ -23,28 +23,30 @@ export const Story = () => {
         className="text-4xl sm:text-5xl font-black text-white leading-[1.1] tracking-tight mb-6"
         style={{ fontFamily: "'DM Sans', sans-serif" }}
       >
-        I turn complex{" "}
-        <span style={{ color: "#c2410c" }}>ideas</span>
-        {" "}into{" "}
+        I turn complex <span style={{ color: "#c2410c" }}>ideas</span> into{" "}
         <br className="hidden sm:block" />
         working products.
       </h2>
 
       {/* Story paragraphs */}
-      <div className="space-y-4 text-[15px] leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
+      <div
+        className="space-y-4 text-[15px] leading-relaxed"
+        style={{ color: "rgba(255,255,255,0.45)" }}
+      >
         <p>
-          Hey — I'm Abhijeet, a full-stack developer based in India. I started writing
-          code because I wanted to build things that actually worked, and that obsession
-          never really stopped.
+          Hey - I'm Abhijeet, a full-stack developer based in India. I started
+          writing code because I wanted to build things that actually worked,
+          and that obsession never really stopped.
         </p>
         <p>
-          Over the years I've helped early-stage startups go from whiteboard sketches to
-          shipped MVPs — handling everything from backend architecture to polished
-          front-ends. I work fast, communicate clearly, and I care about the craft.
+          I enjoy building modern web applications that are fast, scalable, and
+          meaningful - while continuously learning, experimenting, and improving
+          as a developer in the AI era.
         </p>
         <p>
-          When I'm not building, I'm writing about what I learn, exploring open-source,
-          or helping other developers navigate the chaos of modern web dev.
+          When I'm not building, I'm writing about what I learn, exploring
+          open-source, or helping other developers navigate the chaos of modern
+          web dev.
         </p>
       </div>
 
@@ -52,7 +54,7 @@ export const Story = () => {
       <div className="mt-8 grid grid-cols-3 gap-4">
         {[
           { num: "1+", label: "Years building" },
-          { num: "10+", label: "Projects shipped" },
+          { num: "10+", label: "Products shipped" },
           { num: "4+", label: "Happy clients" },
         ].map(({ num, label }) => (
           <div
@@ -69,7 +71,9 @@ export const Story = () => {
             >
               {num}
             </div>
-            <div className="text-[11px] text-gray-500 mt-1 tracking-wide uppercase">{label}</div>
+            <div className="text-[11px] text-gray-500 mt-1 tracking-wide uppercase">
+              {label}
+            </div>
           </div>
         ))}
       </div>
@@ -86,8 +90,8 @@ export const Story = () => {
             color: "#fff",
             boxShadow: "0 4px 16px rgba(194,65,12,0.3)",
           }}
-          onMouseEnter={e => e.currentTarget.style.background = "#b53d0c"}
-          onMouseLeave={e => e.currentTarget.style.background = "#c2410c"}
+          onMouseEnter={(e) => (e.currentTarget.style.background = "#b53d0c")}
+          onMouseLeave={(e) => (e.currentTarget.style.background = "#c2410c")}
         >
           <ExternalLink size={14} />
           Download Resume
@@ -96,12 +100,14 @@ export const Story = () => {
           href="#contact"
           className="text-sm font-semibold transition-colors"
           style={{ color: "rgba(255,255,255,0.4)" }}
-          onMouseEnter={e => e.currentTarget.style.color = "#fff"}
-          onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.4)"}
+          onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
+          onMouseLeave={(e) =>
+            (e.currentTarget.style.color = "rgba(255,255,255,0.4)")
+          }
         >
           Get in touch →
         </a>
       </div>
     </div>
   );
-}
+};

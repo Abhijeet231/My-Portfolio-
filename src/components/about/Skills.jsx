@@ -50,12 +50,22 @@ export function SkillsSection() {
           >
             Skills
           </span>
-          <h2
+          {/* <h2
             className="text-3xl sm:text-4xl font-black text-white"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
             Technologies I work with
-          </h2>
+          </h2> */}
+
+     <h2
+        className="text-4xl sm:text-5xl font-black text-white leading-[1.1] tracking-tight mb-6"
+        style={{ fontFamily: "'DM Sans', sans-serif" }}
+      >
+        <span style={{ color: "#c2410c" }}> Technologies </span>I Work With
+        <br className="hidden sm:block" />
+        
+      </h2>
+
           <p
             className="mt-2 text-sm"
             style={{ color: "rgba(255,255,255,0.3)" }}
