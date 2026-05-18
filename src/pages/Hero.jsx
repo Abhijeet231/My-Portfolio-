@@ -52,7 +52,7 @@ function Hero() {
           }}
         >
           {/* Name */}
-          <h1 className="text-5xl sm:text-7xl md:text-8xl font-semibold text-white leading-tight tracking-tight mb-5">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-medium text-white leading-tight tracking-tight mb-5">
             Abhijeet Ghosh
           </h1>
 

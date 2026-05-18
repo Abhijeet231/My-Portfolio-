@@ -2,12 +2,13 @@ import { useState, useCallback } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 
-const COOLDOWN_MS = 60 * 1000; // 1 minute cooldown
+const COOLDOWN_MS = Number(import.meta.env.VITE_CONTACT_COOLDOWN_MS);
 const COOLDOWN_KEY = "contact_last_sent";
 
-const EMAILJS_SERVICE  = "service_6f5ycrf";
-const EMAILJS_TEMPLATE = "template_uq26oxr";
-const EMAILJS_KEY      = "ak7dkScnnCxjzaBXu";
+
+const EMAILJS_SERVICE  = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_KEY      = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const INITIAL = { name: "", email: "", subject: "", message: "" };
 

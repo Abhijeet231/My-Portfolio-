@@ -28,12 +28,23 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-10 flex items-center justify-between h-16">
         {/* Logo — scrolls to top */}
+
         <Link
           to="/"
-          className="text-orange-700 font-bold text-xl tracking-tight select-none cursor-pointer"
+          className="select-none cursor-pointer group"
           style={{ fontFamily: "'DM Sans', sans-serif" }}
         >
-          AG
+          <div className="relative">
+            <span className="text-white font-bold text-2xl tracking-tight">
+              A
+            </span>
+            <span className="text-orange-700 font-bold text-2xl tracking-tight">
+              G
+            </span>
+            <div className="absolute -bottom-0.5 left-0 right-0 h-px bg-orange-700">
+              <div className="absolute left-0 top-0 w-1.5 h-full bg-white" />
+            </div>
+          </div>
         </Link>
 
         {/* Desktop Links */}
@@ -65,9 +76,15 @@ export default function Navbar() {
           className="md:hidden flex flex-col gap-1.5 p-2 group"
           aria-label="Toggle menu"
         >
-          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+          <span
+            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
+          />
+          <span
+            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : ""}`}
+          />
+          <span
+            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
+          />
         </button>
       </div>
 

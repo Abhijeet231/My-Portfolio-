@@ -20,10 +20,10 @@ export const projects = [
     title: "Quick Serve",
     subtitle: "Client project",
     description:
-      "A local service provider platform that helps users to book services.",
+      " A full-stack local services marketplace inspired by Urban Company, designed to connect users with nearby service providers across categories like plumbing, teaching, healthcare, repairs, and more. Users can book trusted professionals, while customers can seamlessly upgrade to become service providers. The platform includes an admin verification system, provider onboarding workflow, booking management, and role-based dashboards for users, providers, and administrators.",
     image: quickserveImg, // replace with "/projects/quick-serve.png"
     gradient: "linear-gradient(135deg, #071a0f 0%, #0f3320 40%, #071a0f 100%)",
-    tech: ["Next.js", "Node.js", "PostgreSQL", "Tailwind CSS", "Cloudinary"],
+    tech: ["Next.js", "Node.js","Express.js", "MongoDB", "Tailwind CSS", "React", "JWT"],
     github: "https://github.com/Abhijeet231/QuickServe",
     live: "https://quickserve.tokenmitra.online/",
     type: "freelance",
@@ -31,13 +31,13 @@ export const projects = [
     featured: true,
   },
   {
-    title: "TokenMitra",
+    title: "Token Mitra",
     subtitle: "Personal project",
     description:
-      "A Queue Managment & appointment automation system for medical clinics. Build to reduce long waiting queues and improve patient experience. Features real-time updates, doctor dashboards, and In-Mail notifications.",
+      "A full-stack queue management and appointment automation platform designed for medical clinics and healthcare professionals. Patients can search for doctors, book or cancel appointments, join virtual 1-on-1 consultations, and receive real-time updates and email notifications. Doctors get a dedicated dashboard to manage availability, appointments, patient queues, and overall scheduling efficiently.",
     image: tokenmitraImg, // replace with "/projects/tokenmitra.png"
     gradient: "linear-gradient(135deg, #1a0a00 0%, #3d1a00 40%, #1a0800 100%)",
-    tech: ["React", "Express.js", "MongoDB", "Tailwind CSS", "JWT"],
+    tech: ["React","Node.js", "Express.js", "MongoDB", "Tailwind CSS", "JWT", "WebSockets"],
     github: "https://github.com/Abhijeet231/Token_Mitra", // replace with real URL
     live: "https://www.tokenmitra.online/", // replace with real URL
     type: "personal",
