@@ -201,7 +201,7 @@ export default function ContactInfo() {
       <div className="flex items-center gap-2.5">
         <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
         <span className="text-[12px] font-medium" style={{ color: "rgba(255,255,255,0.35)" }}>
-          Currently available for freelance projects
+          Open to New Opportunities
         </span>
       </div>
     </div>

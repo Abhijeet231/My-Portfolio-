@@ -72,7 +72,7 @@ function Hero() {
               className="text-base sm:text-lg font-semibold"
               style={{ color: "#c2410c", fontFamily: "'DM Sans', sans-serif" }}
             >
-            Open to impactful work
+           Open to Startup & Product-Focused Roles
             </p>
           </div>
 
